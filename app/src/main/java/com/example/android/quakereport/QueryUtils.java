@@ -65,8 +65,10 @@ public final class QueryUtils {
                 Long timeInMilliseconds = Long.parseLong(properties.optString("time").toString());
                 String place = properties.optString("place").toString();
 
+                // Extract the value for the key called "url"
+                String url = properties.getString("url");
 
-                earthquakes.add(new Earthquake(mag, place, timeInMilliseconds));
+                earthquakes.add(new Earthquake(mag, place, timeInMilliseconds, url));
             }
 
         } catch (JSONException e) {
